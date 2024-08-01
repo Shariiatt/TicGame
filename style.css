@@ -1,0 +1,188 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+  
+
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    color: rgb(239, 197, 56);
+    margin-bottom: 20px;
+   
+}
+
+header {
+    box-sizing: border-box;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form {
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-left: 500px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: larger;
+    font-weight: 800;
+    border: 1px solid white;
+   
+}
+
+input {
+    width: 280px;
+    height: 40px;
+    padding-left: 10px;
+    background-color: rgb(251, 189, 164);
+}
+
+input::placeholder{
+    color: rgb(81, 75, 75);
+    font-size: medium;
+    font-weight: 500;
+    border-radius: 10px;
+    padding-left: 1px;
+}
+
+
+.playerContainer {
+     margin-top: 20px;
+     height: 150px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+}
+
+button{
+    width : 280px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: rgb(226, 181, 18);
+    opacity: 1;
+    font-size: large;
+    font-weight: 800;
+    color: rgb(67, 14, 14);
+}
+
+
+.but {
+    width: 190px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: 800;
+    background-color: rgb(78, 15, 15);
+    color: rgb(226, 181, 18);
+    border: none;
+    text-align: center;
+}
+
+.board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: 133px;
+    height: 133px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.winning-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right : 0;
+    bottom: 0;
+    font-size: 5rem;
+    font-family :'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(15, 9, 9,.8);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+   
+
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+.Restart {
+   margin: 0;
+   position: absolute;
+   top: 55%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+}
+
+.restartButton {
+   margin: 0;
+   position: absolute;
+   top: 85%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+}
+
+.cell.x {
+    background-image: url("x-image.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.cell.circle {
+    background-image: url("circle.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell.x, .cell.circle{
+    cursor: not-allowed;
+}
+   
+
+.board.x .cell:not(.x):not(.circle):hover{
+    background-image: url("x-light.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover{
+    background-image: url("circle.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    
+}
